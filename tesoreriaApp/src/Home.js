@@ -14,11 +14,11 @@ class Home extends Component {
         let idUser = this.props.cookies.get('rcc_idadmin');
         const API = "http://localhost:3000";
         let url = API + '/api/admin/logout/'+idUser;
-        // fetch(url , {
-        //     method: 'DELETE',
-        //     headers = new Headers({'Content-Type':'application/json'}),
-        //     body: JSON.stringify({idUser})
-        // })
+        fetch(url , {
+            method: 'DELETE',
+            headers = new Headers({'Content-Type':'application/json'}),
+            body: JSON.stringify({idUser})
+        })
     }
     render() {
         if (!this.props.cookies.get('rcc_idadmin')) {
